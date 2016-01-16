@@ -1,4 +1,4 @@
-#! bin/bash
+#!/bin/bash
 #
 # Installation script
 # Install zsh, oh-my-zsh, Apache Server and dependencies, git
