@@ -7,7 +7,7 @@ fi
 
 LISTE=""
 LISTE=$LISTE" vlc x264 ffmpeg2theora oggvideotools istanbul shotwell mplayer hugin nautilus-image-converter pavucontrol gimp gimp-save-for-web ogmrip transmageddon guvcview wavpack mppenc faac flac vorbis-tools faad lame nautilus-script-audio-convert cheese sound-juicer picard arista nautilus-arista milkytracker mypaint"
-LISTE=$LISTE" build-essential vim git git-core gparted ubuntu-restricted-extras"
+LISTE=$LISTE" build-essential vim git git-core gparted ubuntu-restricted-extras wget zsh"
 
 ADDAPT="add-apt-repository -y"
 UBUNTUVERSION=`lsb_release -cs`
@@ -27,8 +27,15 @@ apt-get upgrade
 echo "Install those package: $LISTE"
 apt-get install $LISTE
 
-sudo su
-apt-get update
-apt-get upgrade
-apt-get install git wget vim apache2 php5 mysql-server libapache2-mod-php5 php5-mysql phpmyadmin zsh
 chsh -s /bin/zsh
+
+cd ~/
+
+sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+#git clone git@github.com:CapsHil/zshrc.git
+#mv zshrc/.zshrc ./
+#rm -rf zshrc
+
+git clone git@github.com:CapsHil/vimrc.git
+mv vimrc/.vim ./
+rm -rf vimrc
